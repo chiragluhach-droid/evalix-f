@@ -1,4 +1,5 @@
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5080';
+// Backend base URL, e.g. https://evalix-b.onrender.com (trailing slash is stripped)
+export const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5080').replace(/\/+$/, '');
 
 export type Role = 'admin' | 'teacher' | 'student';
 export interface User { _id: string; name: string; email: string; role: Role; rollNo?: string; department?: string }
